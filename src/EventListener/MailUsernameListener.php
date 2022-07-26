@@ -71,7 +71,7 @@ class MailUsernameListener
             $this->connection->update(
                 'tl_member',
                 ['username' => $strValue],
-                ['id' => $dc->id]
+                ['id' => $dc->id ?? null]
             );
         } finally {
             $this->connection->executeQuery('UNLOCK TABLES');
